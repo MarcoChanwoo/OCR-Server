@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/form.css' %}"
+</head>
+{% include 'header.html' %}
+<body>
+    <section>
+        <h2>게시글 등록</h2>
+        <form method="POST" action="api/v1/boards/" enctype="multipart/form-data">
+            <input type="text" id="title" name="title" placeholder="title" autofocus>
+            <textarea id="contents" name="contents"></textarea>
+            <input type="file" id="file" name="loaded_file" accept="image/png, image/jpg, image/jpeg, image.gif">
+            <input type="submit">
+        </form>
+    </section>
+</body>
+{% include 'footer.html' %}
+</html>
